@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/NulahStatus/bin
+/NulahStatus/obj/Debug
+/NulahStatus/bin
+/NulahStatus/obj
+/NulahStatus/appsettings.json
+/NulahStatus/appsettings.dev.json
