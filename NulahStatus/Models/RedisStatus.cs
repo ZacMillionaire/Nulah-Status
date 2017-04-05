@@ -1,4 +1,6 @@
-﻿namespace NulahStatus.Models
+﻿using System;
+
+namespace NulahStatus.Models
 {
     public class RedisStatus
     {
@@ -84,5 +86,6 @@
         public float UsedCpuSysChildren { get; set; }   // in seconds
         public float UsedCpuUserChildren { get; set; }  // in seconds
         //public string ClusterEnabled { get; set; }
+        public DateTime Updated { get; set; }
     }
 }

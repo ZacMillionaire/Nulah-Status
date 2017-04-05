@@ -48,6 +48,7 @@ namespace NulahStatus
                 UsedCpuUser = float.Parse(infoToStatus["used_cpu_user"]),
                 UsedCpuSysChildren = float.Parse(infoToStatus["used_cpu_sys_children"]),
                 UsedCpuUserChildren = float.Parse(infoToStatus["used_cpu_user_children"]),
+                Updated = DateTime.UtcNow
             };
 
             RedisStore.RedisCache.ListLeftPush("Nulah-Redis-Status", JsonConvert.SerializeObject(redisStatus));
