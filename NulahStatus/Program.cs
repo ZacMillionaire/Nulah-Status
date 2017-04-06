@@ -52,6 +52,7 @@ namespace NulahStatus
             };
 
             RedisStore.RedisCache.ListLeftPush("Nulah-Redis-Status", JsonConvert.SerializeObject(redisStatus));
+            RedisStore.RedisCache.ListTrim("Nulah-Redis-Status", 0, 2016); // probably the number of 5 minute blocks in a week (7*24*60)/5
         }
     }
 }
