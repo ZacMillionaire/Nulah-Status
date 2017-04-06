@@ -9,3 +9,4 @@
 /NulahStatus/obj
 /NulahStatus/appsettings.json
 /NulahStatus/appsettings.dev.json
+*.user

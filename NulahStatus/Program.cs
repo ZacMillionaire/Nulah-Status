@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace NulahStatus
 {
@@ -31,7 +32,6 @@ namespace NulahStatus
 
             // builds the PoCO based on the response
             //var statusToClassString = string.Join("\n", infoToStatus.Select(x => $"public string {x.Key.Substring(0,1).ToUpper()+ Regex.Replace(x.Key.Substring(1,x.Key.Length-1),"_[a-z]",m => m.Value.ToUpper()).Replace("_","")} {{get;set;}}"));
-
             RedisStatus redisStatus = new RedisStatus
             {
                 UsedMemory = int.Parse(infoToStatus["used_memory"]),
@@ -48,7 +48,8 @@ namespace NulahStatus
                 UsedCpuUser = float.Parse(infoToStatus["used_cpu_user"]),
                 UsedCpuSysChildren = float.Parse(infoToStatus["used_cpu_sys_children"]),
                 UsedCpuUserChildren = float.Parse(infoToStatus["used_cpu_user_children"]),
-                Updated = DateTime.UtcNow
+                Updated = DateTime.UtcNow,
+                NulahStatusVersion = "0.0.3"
             };
 
             RedisStore.RedisCache.ListLeftPush("Nulah-Redis-Status", JsonConvert.SerializeObject(redisStatus));

@@ -87,5 +87,6 @@ namespace NulahStatus.Models
         public float UsedCpuUserChildren { get; set; }  // in seconds
         //public string ClusterEnabled { get; set; }
         public DateTime Updated { get; set; }
+        public string NulahStatusVersion { get; set; }
     }
 }
